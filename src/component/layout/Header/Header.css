@@ -1,0 +1,109 @@
+.speedDial {
+    position: fixed;
+    right: 3vmax;
+    top: 3vmax;
+  }
+  
+  .speedDialIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+  }
+
+  .menu-bar{
+    position: fixed;
+    top:8vh;
+    left: 4vw;
+    z-index: 111;
+}
+.menu-bar :hover{
+   cursor: pointer;
+   color: tomato;
+}
+
+.navbar{
+    overflow:hidden;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly ;
+    position: fixed;
+    background-color: white;
+    z-index: 15;
+    /* transition: width 2s ease 4s ; */
+}
+.navbar div{
+    padding: 0 2vw;
+}
+
+.logo a img{
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 5vw
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    right: 5vw;
+}
+.nav-menu a{
+    font: 200 1.1rem "Roboto";
+    margin: 0 4vw;
+    text-decoration: none;
+}
+a:hover{
+    cursor:pointer;
+    transition: 0.2s ease-in;
+    translate: 0 -1vh;
+}
+
+.loginNav{
+    display: flex;
+    /* justify-content: space-between; */
+
+}
+.loginNav a{
+    margin: 0 0.3vw;
+}
+
+.loginNav a img{
+    height: 2em;
+}
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .nav-menu a {
+        margin: 0 2vw ;
+    }
+}
+@media screen and (max-width: 600px) {
+    .menu-bar{
+        position: fixed;
+    top:5vh;
+    left: 6vw;
+    z-index: 111;
+    }
+    .navbar{
+        display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    margin-top: 3vh;
+    }
+    .nav-menu{
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 2vw 0;
+        top: -7vh;
+    }
+    .nav-menu a{
+        margin: 1vh;
+    }
+    .loginNav{
+        position: relative;
+        right: 5vw;
+    }
+}
+
