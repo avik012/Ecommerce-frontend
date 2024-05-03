@@ -41,12 +41,13 @@
   .banner::after {
     content: "";
     width: 100vw;
-    height: 100vmin;
+    height: 106vmin;
     background-color: #ffffff;
     position: absolute;
-    top: 0%;
+    top: 5vh;
     left: 0;
     clip-path: polygon(100% 68%, 0 100%, 100% 100%);
+    /* clip-path: polygon(100% 83%, 0% 100%, 100% 100%); */
     max-width: 100%;
   }
   
@@ -120,6 +121,10 @@
   }
   
   @media screen and (max-width: 600px) {
+    .banner::after {
+      height: 100vmin;
+      top: 0;
+    }
     .productCard > p {
       font-size: 1.7vmax;
     }
@@ -138,3 +143,4 @@
       font: 300 1vmax "Roboto";
     }
   }
+ 

@@ -1,7 +1,7 @@
 .speedDial {
     position: fixed;
     right: 3vmax;
-    top: 3vmax;
+    top: 5vmax;
   }
   
   .speedDialIcon {
@@ -11,10 +11,12 @@
   }
 
   .menu-bar{
+    display: none;
     position: fixed;
     top:8vh;
     left: 4vw;
     z-index: 111;
+    color: white;
 }
 .menu-bar :hover{
    cursor: pointer;
@@ -24,13 +26,12 @@
 .navbar{
     overflow:hidden;
     box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly ;
-    position: fixed;
-    background-color: white;
+    /* position: fixed; */
+    background-color: #110f17;
     z-index: 15;
     /* transition: width 2s ease 4s ; */
 }
@@ -39,9 +40,11 @@
 }
 
 .logo a img{
-    width: 100%;
+    width: 85%;
     box-sizing: border-box;
-    padding-right: 5vw
+    margin-left: 2vw;
+    padding-top: 0.6vw;
+    filter: opacity(0.9) drop-shadow(0 0 0 white);
 }
 
 .nav-menu{
@@ -54,6 +57,7 @@
     font: 200 1.1rem "Roboto";
     margin: 0 4vw;
     text-decoration: none;
+    color: white;
 }
 a:hover{
     cursor:pointer;
@@ -63,6 +67,7 @@ a:hover{
 
 .loginNav{
     display: flex;
+    /* margin-right: 1vw; */
     /* justify-content: space-between; */
 
 }
@@ -73,6 +78,24 @@ a:hover{
 .loginNav a img{
     height: 2em;
 }
+@media screen and (min-width: 600px){
+    .navbar {
+       display: flex !important;
+    }
+}
+/* @media screen and (max-width: 800px){
+    .menu-bar{
+        display: block;
+        position: fixed;
+    top:5vh;
+    left: 6vw;
+    z-index: 111;
+    }
+    .close-icon{
+        position: absolute;
+        top: -3vh;
+    }
+} */
 @media screen and (min-width: 600px) and (max-width: 800px){
     .nav-menu a {
         margin: 0 2vw ;
@@ -80,23 +103,39 @@ a:hover{
 }
 @media screen and (max-width: 600px) {
     .menu-bar{
+        color: #2874f0;
+        display: block;
         position: fixed;
     top:5vh;
     left: 6vw;
     z-index: 111;
     }
+    .close-icon{
+        position: absolute;
+        top: -3vh;
+    }
     .navbar{
         display: flex;
     flex-direction: column;
-    justify-content: normal;
-    margin-top: 3vh;
+    justify-content: center;
+    background-color: darkslategray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 80%;
+    }
+    .logo a img{
+        margin: 1vh auto;
+        display: flex;
     }
     .nav-menu{
         align-items: center;
         flex-direction: column;
         box-sizing: border-box;
         padding: 2vw 0;
-        top: -7vh;
+        margin-bottom: 3vh;
+        /* top: -7vh; */
     }
     .nav-menu a{
         margin: 1vh;
@@ -107,3 +146,16 @@ a:hover{
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .logo a img{
+      width: 70%;
+      padding: 3vw;
+    }
+  }
+  @media screen and (min-width: 800px) and (max-width: 1000px){
+      .logo a img{
+        width: 90%;
+        padding-right: 0;
+      }
+    }
+      
