@@ -10,9 +10,12 @@ import { Link } from 'react-router-dom';
 
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState("")
+    const [menuOpen, setMenuOpen] = useState(false)
     const menuToggleHandler = ()=>{
-        menuOpen ? setMenuOpen(false):setMenuOpen(true)
+        if (window.innerWidth <= 600) {
+            menuOpen ? setMenuOpen(false):setMenuOpen(true)
+        }
+        console.log('menutogle',menuOpen,window.innerWidth)
     }
   return (
     <div className='header'>
@@ -22,7 +25,7 @@ const Header = () => {
             >
             <MenuIcon  fontSize='large'  />
             </div>
-            <div className='close-icon' onClick={menuToggleHandler}
+            <div className='close-icon' onClick={menuToggleHandler} 
              style={menuOpen ? {display:'block'} : {display:"none"}}
              >
             <CloseIcon fontSize='large'  />
@@ -31,25 +34,25 @@ const Header = () => {
         <nav className="navbar" style={menuOpen ? {display: 'flex'}: {display: 'none'}} role="navigation" aria-label="main navigation">
             
             <div className='logo'>
-                <Link   to='/'>
+                <Link onClick={menuToggleHandler}  to='/'>
                     <img src={logo} alt='Ecommerce logo' />
                 </Link>
             </div>
             <div className='nav-menu'>
-                <Link   to='/'>Home</Link>
-                <Link   to='/products'>Products</Link>
-                <Link   to='/about'>About</Link>
-                <Link   to='/contact'>Contact</Link>
+                <Link onClick={menuToggleHandler} to='/'>Home</Link>
+                <Link onClick={menuToggleHandler} to='/products'>Products</Link>
+                <Link onClick={menuToggleHandler} to='/about'>About</Link>
+                <Link onClick={menuToggleHandler} to='/contact'>Contact</Link>
             </div>
 
             <div className='loginNav'> 
-                 <Link   to='/search' title='Search'>
+                 <Link onClick={menuToggleHandler}  to='/search' title='Search'>
                     <img src={search} alt='Search logo' />
                 </Link>
-                <Link   to='/cart' title='Cart'>
+                <Link onClick={menuToggleHandler}  to='/cart' title='Cart'>
                     <img src={Cart} alt='Cart logo' />
                 </Link>
-                <Link   to='/login' title='Login'>
+                <Link onClick={menuToggleHandler}  to='/login' title='Login'>
                     <img src={signUplogo} alt='Profile logo' />
                 </Link>
             </div>
