@@ -1,4 +1,4 @@
-const backendLink = "https://ecommerce-backend-3r1z.onrender.com";
+const backendLink = "https://ecommerce-backend-g8o7.onrender.com/";
 // const backendLink = "http://localhost:4000";
 
 export default backendLink;
