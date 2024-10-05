@@ -10,16 +10,7 @@ import Pagination from "react-js-pagination"
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography"
 import MetaData from '../layout/MetaData'
-
-const categories = [
-  "Laptop",
-  "Footwear",
-  "Tops",
-  "Attire",
-  "Camera",
-  "Smartphone",
-  "jungle test"
-]
+import { categories } from '../../constants/backendLink'
 
 const Product = () => {
     const dispatch = useDispatch();
@@ -49,15 +40,11 @@ const Product = () => {
     }, [dispatch,keyword,currentPage,price,category,ratings,alert,error])
     
   return <Fragment>
-    {loading ? <Loader /> : <>
-    <MetaData title="PRODUCTS--ECOMMERCE" />
-    <h2 className='productsHeading'>Products</h2>
     
-    <div className='products'>
-    {products && products.map((product)=>
-        <ProductCard key={product._id} product={product} />)} 
-    </div>
-
+    <MetaData title="PRODUCTS--ECOMMERCE" />
+    <h2 className='productsHeading'>Products <span className='subCategory'> {category && `(${category})`} </span> </h2>
+    
+    <div className="productPage">
     <div className='filterBox'>
       <Typography>Price</Typography>
       <Slider 
@@ -87,9 +74,9 @@ const Product = () => {
       size='small'
       value={ratings}
       onChange={(e,newRating)=>{
-        setRatings(newRating);
+        setRatings(newRating); 
       }}
-      aria-labelledby='continuous-slider'
+      aria-labelledby='continuous-slider' 
       min={0}
       max={5}
       valueLabelDisplay='auto'
@@ -97,6 +84,14 @@ const Product = () => {
 
       </Slider>
     </fieldset>
+
+    </div>
+    
+    { loading ? <Loader /> : <div className='products'>
+    {products && products.map((product)=>
+        <ProductCard key={product._id} product={product} />)} 
+    </div>}
+    
 
     </div>
     {filteredProductsCount > resultPerPage && (
@@ -118,9 +113,6 @@ const Product = () => {
     </div>
     )}
 
-    
-
-    </>}
   </Fragment>
 }
 

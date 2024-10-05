@@ -27,7 +27,6 @@ const ProductList = ({ history }) => {
   const { error: deleteError, isDeleted } = useSelector(
     (state) => state.delProduct
   );
-  console.log('isDeleted,', isDeleted,deleteError)
 
   const deleteProductHandler = (id) => {
     dispatch(deleteProduct(id));
@@ -94,7 +93,6 @@ const ProductList = ({ history }) => {
 
             <Button
               onClick={() =>{
-                console.log('params.id', params.id);
                 deleteProductHandler(params.id)}
               }
             >

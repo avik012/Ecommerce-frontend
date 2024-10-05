@@ -15,7 +15,6 @@ const Header = () => {
         if (window.innerWidth <= 600) {
             menuOpen ? setMenuOpen(false):setMenuOpen(true)
         }
-        console.log('menutogle',menuOpen,window.innerWidth)
     }
   return (
     <div className='header'>

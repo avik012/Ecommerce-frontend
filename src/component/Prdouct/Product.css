@@ -1,12 +1,13 @@
+.productPage{
+  display: flex;
+}
 .productsHeading {
-    margin: 2vmax auto;
-    width: 15vw;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-    padding: 2vmax;
-    color: rgba(0, 0, 0, 0.678);
-    font: 500 1.5vmax "Roboto";
     text-align: center;
+    font-size: 2.5rem;
+    margin: 1rem;
+    color: #333;
   }
+  
   
   .products {
     display: flex;
@@ -15,6 +16,63 @@
     justify-content: center;
     min-height: 30vh;
   }
+
+  /* Sidebar for filters */
+.filterBox {
+  width: 250px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filterBox h4 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Price Filter */
+.filterBox .MuiSlider-root {
+  color: #007bff; /* Customize slider color */
+}
+
+/* Categories */
+.categoryBox {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categoryBox li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.categoryBox li:hover {
+  background-color: #f0f0f0;
+}
+
+.category-link {
+  font-size: 1rem;
+  color: #555;
+}
+
+.category-link.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Ratings Filter */
+.legend {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
   
   .paginationBox {
     display: flex;
@@ -66,7 +124,7 @@
     color: white;
   }
   
-  .filterBox {
+  /* .filterBox {
     width: 10vmax;
     position: absolute;
     top: 10vmax;
@@ -92,7 +150,7 @@
   .filterBox > fieldset {
     border: none;
     margin-top: 1vmax;
-  }
+  } */
   
   @media screen and (max-width: 600px) {
     .filterBox {
@@ -101,6 +159,11 @@
       margin: auto;
     }
   
+    .productPage {
+      /* flex-direction: column; */
+      flex-wrap: wrap;
+    }
+
     .page-link {
       font: 300 1.7vmax "Roboto";
     }

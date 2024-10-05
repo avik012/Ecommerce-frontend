@@ -12,6 +12,7 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import SideBar from "./Sidebar";
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstant";
 import { useNavigate, useParams } from "react-router-dom";
+import { categories } from "../../constants/backendLink";
 
 const UpdateProduct = ({ history }) => {
   const dispatch = useDispatch();
@@ -31,15 +32,6 @@ const UpdateProduct = ({ history }) => {
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
   useEffect(() => {
       if(product && product._id !== productId){
         dispatch(getProductDetails(productId))

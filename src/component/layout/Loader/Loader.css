@@ -1,10 +1,11 @@
 .loading{
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
     background-color: white;
     display: grid;
     place-items: center;
     max-width: 100%;
+    margin: 0 auto;
 }
 
 .loading > div {

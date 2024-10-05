@@ -45,16 +45,15 @@ import backendLink from "./constants/backendLink";
 
 
 function App() { 
-
-  const { isAuthenticated, user } = useSelector((state) => state.user);
-
+  axios.defaults.withCredentials = true;      // add default credential attribute in axios to handle cookies
+  const { isAuthenticated, user } = useSelector((state) => state.user); 
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
     try{
       
-      const config = {headers: { "Content-Type":"application/json","token":localStorage.getItem("token")}}
-    const { data } = await axios.get(`${backendLink}/api/v1/stripeapikey`,config);
+      // const config = {headers: { "Content-Type":"application/json","token":localStorage.getItem("token")}}
+    const { data } = await axios.get(`${backendLink}/api/v1/stripeapikey`,  );
         setStripeApiKey(data.stripeApiKey);
       }
       catch(error){

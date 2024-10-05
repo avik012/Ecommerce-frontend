@@ -23,7 +23,8 @@ const CheckoutSteps = ({ activeStep }) => {
     ]
 
     const stepStyles={
-        boxSizing:"border-box"
+        boxSizing:"border-box",
+        marginTop: '3vh'
     }
   return (
     <Fragment>

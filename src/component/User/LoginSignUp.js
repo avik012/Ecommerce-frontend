@@ -59,7 +59,7 @@ const LoginSignUp = () => {
 
             reader.onload = ()=>{
                 if(reader.readyState === 2 ){
-                    console.log('avtar', reader.result)
+                    // console.log('avtar', e.target.files)
                     setAvtarPreview(reader.result)
                     setAvtar(reader.result)
                 }
@@ -179,6 +179,9 @@ const LoginSignUp = () => {
                     <input 
                     type='file'
                     name='avtar'
+                    required ={avtar? false : true}
+                    // disabled = {avtar? true: false}
+                    // value= 'c:/hlo/truels.png'
                     accept='image/*'
                     onChange={registerDataChange}
                     />

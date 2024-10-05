@@ -28,7 +28,6 @@ const ProductReviews = () => {
   const { error: deleteError, isDeleted } = useSelector(
     (state) => state.review 
   );
-//   console.log('isDeleted,', isDeleted,reviews)
 
   const deleteReviewHandler = (reviewId) => {
     dispatch(deleteReviews(reviewId,productId));
