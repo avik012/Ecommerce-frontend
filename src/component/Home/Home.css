@@ -138,7 +138,6 @@
   
     .productCard > .productDetails > div {
       margin: 0vmax;
-      /* display: block; */
       flex-direction: column;
     }
   
