@@ -44,7 +44,7 @@ export const productReducer = (state = {products:[]}, action )=>{
         case ALL_PRODUCT_FAIL:
             case ADMIN_PRODUCT_FAIL:
             return {
-                loading:true, 
+                loading:false, 
                 error:action.payload
             }    
         case CLEAR_ERRORS:

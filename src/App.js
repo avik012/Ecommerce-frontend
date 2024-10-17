@@ -156,7 +156,7 @@ function App() {
           <Route  path="/admin/reviews" element= {<ProductReviews />} />
         </Route>
 
-          <Route path ="*"  element= { <NotFound />} />
+          <Route path ="*"  element= { <NotFound title='Page Not Found' />} />
        
          
         

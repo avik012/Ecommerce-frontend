@@ -28,8 +28,10 @@
   
   .CarouselImage {
     width: 20vmax;
-    position: relative;
-    left: 9.5vw;
+    /* position: relative;
+    left: 9.5vw; */
+    display: block;
+    margin: auto;
     height: 25vmax;
     border-radius: 5px;
   }
@@ -119,6 +121,13 @@
     color: rgba(0, 0, 0, 0.651);
     font: 400 1vmax "Roboto";
     margin: 1vmax 0;
+  }
+
+  .redColor{
+    color: red;
+  }
+  .greenColor{
+    color: green;
   }
   
   .detailsBlock-4 {
@@ -213,8 +222,8 @@
 
     .CarouselImage {
       width: 20vmax;
-      position: relative;
-      left: 18vw;
+      /* position: relative;
+      left: 18vw; */
     }
   
     .ProductDetails > div:last-child {

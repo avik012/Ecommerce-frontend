@@ -17,6 +17,7 @@ import {Dialog,
   Rating
 } from '@mui/material'
 import { NEW_REVIEW_RESET } from '../../constants/productConstant';
+import NotFound from '../layout/Not Found/NotFound.js';
 
 const ProductDetails = () => {
     const dispatch = useDispatch();
@@ -64,6 +65,8 @@ const ProductDetails = () => {
     useEffect(() => {
       if(error){
         alert.error(error);
+      } 
+      if(product && error){
         dispatch(clearErrors())
       } 
       if(reviewError){
@@ -74,12 +77,16 @@ const ProductDetails = () => {
         alert.success("Review Submitted Successfully")
         dispatch({ type: NEW_REVIEW_RESET})
       }
+    }, [dispatch,alert,error,reviewError,success,product]);
+
+    useEffect(() => {
       dispatch(getProductDetails(id)) 
-    }, [dispatch,id,alert,error,reviewError,success])
+    }, [dispatch, id]); 
+    
     
     const options = { 
       size:"large",
-      value: product.ratings,
+      value: product?.ratings,
       precision:0.5,
       readOnly:true
     };
@@ -92,11 +99,15 @@ const ProductDetails = () => {
     //   isHalf: true,
     // };
 
+    if(!product){
+      return <NotFound title={`Error Occured: ${error}`} />
+    }
+
   return (
     <>
     {loading ? <Loader />:
   (<>
-  <MetaData title={`${product.name}--ECOMMERCE`} />
+  <MetaData title={`${product?.name ? product.name+'--' : ''} ECOMMERCE`} />
     <div className='ProductDetails'>
         <div>
             <div>
@@ -146,7 +157,7 @@ const ProductDetails = () => {
                 <p>
                   Status:
                   <b className={product.stock < 1 ? "redColor" : "greenColor"}>
-                    {product.stock < 1 ? "OutOfStock" : "InStock"}
+                    {product.stock < 1 ? " OutOfStock" : " InStock"}
                   </b>
                 </p>
               </div>

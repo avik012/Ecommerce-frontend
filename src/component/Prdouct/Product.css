@@ -156,12 +156,13 @@
     .filterBox {
       width: 20vmax;
       position: static;
-      margin: auto;
+      margin: 0 auto 4vh;
     }
   
     .productPage {
-      /* flex-direction: column; */
-      flex-wrap: wrap;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+
     }
 
     .page-link {

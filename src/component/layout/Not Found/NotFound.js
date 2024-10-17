@@ -4,12 +4,12 @@ import "./NotFound.css";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const NotFound = () => {
+const NotFound = ({title, height='50vh'}) => {
   return (
-    <div className="PageNotFound">
+    <div className="PageNotFound" style={{height: height}}>
       <Error />
 
-      <Typography>Page Not Found </Typography>
+      <Typography>{title} </Typography>
       <Link to="/">Home</Link>
     </div>
   );

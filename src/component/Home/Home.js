@@ -7,6 +7,7 @@ import { useAlert } from "react-alert";
 import { clearErrors, getProducts } from "../../actions/productAction";
 import ProductCard from "./ProductCard.js";
 import { Loader } from "../layout/Loader/Loader";
+import NotFound from "../layout/Not Found/NotFound.js";
 
 const Home = () => {
   const alert = useAlert(); 
@@ -16,12 +17,14 @@ const Home = () => {
   useEffect(() => {
     if (error) {
       alert.error(error); 
+    }
+    if (error && products) {
       dispatch(clearErrors());
     }
-  }, [dispatch, error, alert]); 
+  }, [dispatch, error, alert, products]); 
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getProducts()); 
   }, [dispatch]); 
 
   
@@ -45,7 +48,7 @@ const Home = () => {
 <h2 className="homeHeading">Featured Products</h2>
 
 <div className="container" id="container">
-  {loading ? <Loader /> :  products && products.map((product,i)=> <ProductCard product={product} key={i} />)}
+  {loading ? <Loader /> :  products ?  products.map((product,i)=> <ProductCard product={product} key={i} />) : <NotFound height="auto" title={`Error Occured: ${error}`} />}
 </div>
     </Fragment>
     }
